@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Modal from "../UI/Modal";
 
 const CartItems = styled.ul`
   list-style: none;
@@ -16,6 +17,10 @@ const Total = styled.div`
   font-size: 1.5rem;
   margin: 1rem 0;
 `;
+
+const CloseButton = styled.button``;
+
+const OrderButton = styled.button``;
 
 const Actions = styled.div`
   text-align: right;
@@ -36,14 +41,15 @@ const Actions = styled.div`
     border-color: #5a1a01;
     color: white;
   }
-`;
-const CloseButton = styled.button`
-  color: #8a2b06;
-`;
 
-const OrderButton = styled.button`
-  background-color: #8a2b06;
-  color: white;
+  & ${CloseButton} {
+    color: #8a2b06;
+  }
+
+  & ${OrderButton} {
+    background-color: #8a2b06;
+    color: white;
+  }
 `;
 
 const Cart = (props) => {
@@ -56,7 +62,7 @@ const Cart = (props) => {
   );
 
   return (
-    <div>
+    <Modal>
       {cartItems}
       <Total>
         <span>Total Amount</span>
@@ -66,7 +72,7 @@ const Cart = (props) => {
         <CloseButton>Close</CloseButton>
         <OrderButton>Order</OrderButton>
       </Actions>
-    </div>
+    </Modal>
   );
 };
 
