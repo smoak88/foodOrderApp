@@ -29,6 +29,8 @@ const ModalDiv = styled.div`
     left: calc(50% - 20rem);
   }
 
+  /* ^^^^^rather than setting left: 50% and then translating the div 50% (20rem/40rem) to the left in order to center, we just set left to 50% minus that 20rem */
+
   @keyframes slide-down {
     from {
       opacity: 0;
@@ -56,7 +58,10 @@ const portalElement = document.getElementById("overlays");
 const Modal = (props) => {
   return (
     <>
-      {reactDom.createPortal(<BackdropDiv />, portalElement)}
+      {reactDom.createPortal(
+        <BackdropDiv onClick={props.onClose} />,
+        portalElement
+      )}
       {reactDom.createPortal(
         <ModalOverlay>{props.children}</ModalOverlay>,
         portalElement

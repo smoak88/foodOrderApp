@@ -61,9 +61,9 @@ ${StyledButton}:active & {
 //   }
 // }
 
-const HeaderCardButton = (props) => {
+const HeaderCartButton = (props) => {
   return (
-    <StyledButton>
+    <StyledButton onClick={props.onClick}>
       <Icon>
         <CartIcon />
       </Icon>
@@ -72,4 +72,4 @@ const HeaderCardButton = (props) => {
     </StyledButton>
   );
 };
-export default HeaderCardButton;
+export default HeaderCartButton;

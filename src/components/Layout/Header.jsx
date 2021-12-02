@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import mealsImage from "../../assets/meals.jpg";
-import HeaderCardButton from "./HeaderCartButton";
+import HeaderCartButton from "./HeaderCartButton";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -38,7 +38,7 @@ const Header = (props) => {
     <>
       <StyledHeader>
         <h1>ReactMeals</h1>
-        <HeaderCardButton />
+        <HeaderCartButton onClick={props.onShowCart} />
       </StyledHeader>
       <StyledDiv>
         <img src={mealsImage} alt="A table of food" />
