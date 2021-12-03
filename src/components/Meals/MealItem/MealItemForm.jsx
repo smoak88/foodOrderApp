@@ -32,6 +32,7 @@ const MealItemForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredAmount = amountInputRef.current.value;
+    // we use refs rather than state to get the value of our inputs
     const enteredAmountNumber = +enteredAmount;
     if (
       enteredAmount.trim().length === 0 ||
